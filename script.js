@@ -1,15 +1,12 @@
-function revealOnScroll() {
-    const reveals = document.querySelectorAll(".reveal");
+window.addEventListener("scroll", function () {
+    let reveals = document.querySelectorAll(".reveal");
 
-    reveals.forEach((el) => {
-        const windowHeight = window.innerHeight;
-        const elementTop = el.getBoundingClientRect().top;
-        const visible = 100;
+    reveals.forEach(function (el) {
+        let windowHeight = window.innerHeight;
+        let elementTop = el.getBoundingClientRect().top;
 
-        if (elementTop < windowHeight - visible) {
+        if (elementTop < windowHeight - 100) {
             el.classList.add("active");
         }
     });
-}
-
-window.addEventListener("scroll", revealOnScroll);
+});
